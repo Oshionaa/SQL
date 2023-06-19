@@ -1,22 +1,23 @@
 -Create a makeup store database
 
-CREATE TABLE Makeup(Id INTEGER PRIMARY KEY , Name TEXT, Quantity INTEGER,Price NUMERIC,Brand TEXT);
+CREATE TABLE Makeup(Id INTEGER PRIMARY KEY , Name TEXT, Quantity INTEGER,Price INTEGER,Brand TEXT);
 
-INSERT INTO Makeup VALUES (1,"NARS Radiant Creamy Concealer", 100, 30, "NARS");
-INSERT INTO Makeup VALUES (2,"Shape Tape Concealer", 30, 31, "Tarte Cosmetics");
-INSERT INTO Makeup VALUES (3,"The Sensual Skin Enhancer", 50, 44, "Kevyn Aucoin");
-INSERT INTO Makeup VALUES (4,"Age Rewind Concealer", 50, 25, "Maybelline");
-INSERT INTO Makeup VALUES (5,"Bronze Highlight", 50, 17, "CoverGirl");
-INSERT INTO Makeup VALUES (6,"Sheer Frosty Lip Gloss", 60, 20, "Fenty Beauty");
-INSERT INTO Makeup VALUES (7,"Lip Plumper Gloss", 200, 17, "Anastasia Beverly Hills");
-INSERT INTO Makeup VALUES (8,"Gloss Bomb", 250, 44,"Fenty Beauty");
-INSERT INTO Makeup VALUES (9,"Flawless Satin Foundation", 80, 34, "E.L.F");
-INSERT INTO Makeup VALUES (10,"Pro Filter Foundation", 100, 30, "Kevyn Aucoin");
-INSERT INTO Makeup VALUES (11,"True Match Foundation", 50, 45, "Kera's Beauty");
-INSERT INTO Makeup VALUES (12,"Pro Filter Foundation", 75, 23, "Tarte Cosmetics");
-INSERT INTO Makeup VALUES (13,"New and Dewy Match Foundation", 120, 14, "Maybelline");
-INSERT INTO Makeup VALUES (14,"Amazonian Clay Palette", 100, 22,"Tarte Cosmetics");
-INSERT INTO Makeup VALUES (15,"Ultimate Utopia", 100, 18, "NYX");
+INSERT INTO Makeup VALUES (1,"NARS Radiant Creamy Concealer", 100, 30.45, "NARS");
+INSERT INTO Makeup VALUES (2,"Shape Tape Concealer", 30, 24.99, "Tarte Cosmetics");
+INSERT INTO Makeup VALUES (3,"The Sensual Skin Enhancer", 50, 44.35, "Kevyn Aucoin");
+INSERT INTO Makeup VALUES (4,"Age Rewind Concealer", 50, 25.67, "Maybelline");
+INSERT INTO Makeup VALUES (5,"Bronze Highlight", 50, 17.25, "CoverGirl");
+INSERT INTO Makeup VALUES (6,"Sheer Frosty Lip Gloss", 60, 20.95, "Fenty Beauty");
+INSERT INTO Makeup VALUES (7,"Lip Plumper Gloss", 200, 17.45, "Anastasia Beverly Hills");
+INSERT INTO Makeup VALUES (8,"Gloss Bomb", 250, 25.65,"Fenty Beauty");
+INSERT INTO Makeup VALUES (9,"Flawless Satin Foundation", 80, 34.85, "E.L.F");
+INSERT INTO Makeup VALUES (10,"Pro Filter Foundation", 100, 30.25, "Kevyn Aucoin");
+INSERT INTO Makeup VALUES (11,"True Match Foundation", 50, 40.45, "Kera's Beauty");
+INSERT INTO Makeup VALUES (12,"Pro Filter Foundation", 75, 23.99, "Tarte Cosmetics");
+INSERT INTO Makeup VALUES (13,"New and Dewy Match Foundation", 120, 14.85, "Maybelline");
+INSERT INTO Makeup VALUES (14,"Amazonian Clay Palette", 100, 22.35,"Tarte Cosmetics");
+INSERT INTO Makeup VALUES (15,"Ultimate Utopia", 100, 18.75, "NYX");
+
 
 -order the products from the least expensive to most expensive.
 SELECT * FROM Makeup ORDER BY Price;
