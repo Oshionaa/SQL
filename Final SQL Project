@@ -1,0 +1,103 @@
+# This project reveals statistics about a Digital Media Store.
+
+
+#1. List the name of each heavy metal track.
+
+    SELECT name as TrackName, genres.name as 'Type'
+    FROM tracks
+    RIGHT JOIN genres 
+    WHERE tracks.Genreid = Genres.Genreid 
+    AND genres.name = 'Heavy Metal';
+    
+#2. Show only the customers from Canada.
+
+    SELECT FirstName, LastName, Country
+    FROM customers 
+    WHERE Country='Canada'
+    Order BY LastName;
+    
+#3. Show the Employees who are Sales Support Agents.
+
+    SELECT FirstName, LastName ,Title
+    FROM employees 
+    WHERE title = 'Sales Support Agent';
+    
+#4. How many invoices were in 2011?
+
+    SELECT count(InvoiceDate) 
+    FROM invoices 
+    WHERE InvoiceDate like '%2011%';
+    
+#5. Find a unique/distinct list of billing countries from the Invoice table.
+    
+    SELECT DISTINCT BillingCountry
+    FROM invoices;
+    
+#6. What are the total sales for 2012?
+
+    SELECT SUM(Total) as 'TotalSales2012'
+    FROM chinook.Invoices
+    WHERE InvoiceDate BETWEEN '2012-01-01' AND '2012-12-31';
+    
+#7. How many invoices are from Germany?
+
+    SELECT BillingCountry, count(InvoiceId) as GermanyInvoices
+    FROM invoices WHERE BillingCountry ='Germany';
+    
+#8. List the tracks that are MPEG audio files.
+
+    SELECT Name, media_types.Name
+    FROM tracks
+    JOIN media_types ON media_types.MediaTypeId= tracks.MediaTypeId;
+    
+#9. Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers. 
+   
+    SELECT i.Total, c.FirstName, c.LastName, c.Country, e.FirstName, e.LastName
+    FROM chinook.employees e
+    JOIN chinook.customers c ON c.SupportRepId=e.EmployeeId
+    JOIN chinook.invoices i ON i.CustomerId=c.CustomerId;
+    
+#10. Write a query that includes the purchased track name with each invoice line ID.
+
+    SELECT t.Name, inv_i.InvoiceLineId
+    FROM chinook.invoice_items inv_i
+    JOIN chinook.Tracks t
+    on inv_i.TrackId=t.TrackId;
+    
+#11. How many orders were made between 2009 and 2012 in the USA?
+
+    SELECT count(*)
+    FROM chinook.Invoices
+    WHERE InvoiceDate between '2009-01-01' AND '2012-12-31' AND BillingCountry = 'USA';
+    
+#12. Show all Sales Support Agents and the name of their assigned customers.
+
+    SELECT c.FirstName, c.LastName, c.SupportRepId, 
+    e.FirstName as EmployeeFirst, e.LastName as EmployeeLast
+    FROM chinook.customers c
+    JOIN employees e
+    ON e.EmployeeId=c.SupportRepID;
+
+#13. Show me the top 10 tracks with the shortest duration.
+
+    SELECT t.Name, t.Milliseconds, g.Name
+    FROM chinook. tracks t
+    JOIN genres g
+    ON g.GenreId=t.GenreId  
+    ORDER BY Milliseconds ASC LIMIT 10;
+    
+#14. Provide a query that shows all the artists and their album names.
+    
+    SELECT a.Name as Artists,ab.Title as AlbumName
+    FROM chinook.artists a
+    JOIN albums ab
+    ON a.ArtistId=ab.AlbumId;
+    
+#15. How many customers have Gmail email addresses?
+
+    SELECT count(email) as Quantity
+    FROM customers
+    WHERE Email like '%gmail%';
+   
+
+    
